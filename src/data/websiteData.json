@@ -1,0 +1,419 @@
+{
+  "common": {
+    "logo": "/logo.png",
+    "siteNamePrimary": "Vault",
+    "siteNameAccent": "ora",
+    "tagline": "Finance & Banking",
+    "phone": "+1 000 000 000",
+    "email": "contact@vaultora.com",
+    "address": "742 Evergreen Terrace, Springfield, OR 97477, USA",
+   "socialLinks": [
+  {
+    "id": "facebook",
+    "label": "Facebook",
+    "mark": "fb",
+    "href": "https://www.facebook.com/"
+  },
+  {
+    "id": "instagram",
+    "label": "Instagram",
+    "mark": "ig",
+    "href": "https://www.instagram.com/"
+  },
+  {
+    "id": "linkedin",
+    "label": "LinkedIn",
+    "mark": "in",
+    "href": "https://www.linkedin.com/"
+  },
+  {
+    "id": "twitter",
+    "label": "Twitter",
+    "mark": "x",
+    "href": "https://x.com/"
+  }
+]
+  },
+  "categories": {
+    "FinanceBanking": {
+      "templateComponents": {
+        "template-1": {
+          "shared": {
+            "Header": "VaultHeader1",
+            "Footer": "VaultFooter1"
+          },
+          "pages": {
+            "home": {
+              "components": [
+                { "key": "Banner", "component": "VaultBanner1" },
+                { "key": "About", "component": "VaultAbout1" },
+                { "key": "Services", "component": "VaultServices1" },
+                { "key": "WhyChooseUs", "component": "VaultWhyChoose1" },
+                { "key": "Team", "component": "VaultTeam1" },
+                { "key": "Testimonials", "component": "VaultTestimonials1" },
+                { "key": "Contact", "component": "VaultContact1" },
+                { "key": "Faq", "component": "VaultFaq1" }
+              ]
+            }
+          }
+        }
+      },
+      "sections": {
+        "Header": {
+          "variants": {
+            "VaultHeader1": {
+              "logo": "/logo.png",
+              "homeHref": "#home",
+              "homeAriaLabel": "Vaultora Finance & Banking home",
+              "menuAriaLabel": "Toggle Menu",
+              "navLinks": [
+                { "label": "Home", "href": "#home", "id": "home" },
+                { "label": "About Us", "href": "#about", "id": "about" },
+                { "label": "Our Services", "href": "#services", "id": "services" },
+                { "label": "Why Choose Us", "href": "#why-choose-us", "id": "why-choose-us" },
+                { "label": "Our Team", "href": "#team", "id": "team" },
+                { "label": "Testimonials", "href": "#testimonials", "id": "testimonials" },
+                { "label": "FAQs", "href": "#faqs", "id": "faqs" }
+              ],
+              "ctaButton": {
+                "label": "Contact Us",
+                "href": "#contact"
+              }
+            }
+          }
+        },
+        "Banner": {
+          "variants": {
+            "VaultBanner1": {
+              "sectionId": "home",
+              "eyebrow": "TRUSTED FINANCIAL PARTNER",
+              "headlinePrefix": "Smart Banking for",
+              "headlineHighlight": "a Stronger Tomorrow",
+              "description": "Manage your finances, grow your wealth and achieve your goals with Vaultora's trusted banking solutions.",
+              "backgroundImage": "/hero-bankers.webp",
+              "backgroundAlt": "Financial advisors consulting with a client in a modern office",
+              "buttons": [
+                {
+                  "label": "Explore Solutions",
+                  "href": "#services",
+                  "variant": "primary-gold",
+                  "hasArrow": true
+                },
+                {
+                  "label": "Contact Us",
+                  "href": "#contact",
+                  "variant": "outline-light",
+                  "hasArrow": false
+                }
+              ]
+            }
+          }
+        },
+        "About": {
+          "variants": {
+            "VaultAbout1": {
+              "sectionId": "about",
+              "eyebrow": "About Us",
+              "headlineLine1": "Solutions That Make a",
+              "headlineHighlight": "Real Financial Difference",
+              "summary": "At Vaultora, we deliver trusted banking and financial solutions designed to help individuals, businesses, and communities grow, manage, and secure their financial future.",
+              "points": [
+                "Customer-Centric Banking",
+                "Secure & Reliable Services",
+                "Expert Financial Guidance",
+                "Long-Term Relationship Focus"
+              ],
+              "yearsValue": 25,
+              "yearsLabel": "Years of Experience",
+              "bigImage": "/hero-bankers.webp",
+              "bigImageAlt": "Advisors reviewing a plan with a client",
+              "smallImage": "/about-handshake.webp",
+              "smallImageAlt": "Advisor shaking hands with a client"
+            }
+          }
+        },
+        "Services": {
+          "variants": {
+            "VaultServices1": {
+              "sectionId": "services",
+              "badge": "Our Services",
+              "titlePrefix": "Comprehensive",
+              "titleHighlight": "Financial Solutions",
+              "description": "A complete range of banking and financial services designed to meet your personal and business goals.",
+              "items": [
+                {
+                  "id": "personal-banking",
+                  "title": "Personal Banking",
+                  "description": "Everyday banking solutions for your personal needs.",
+                  "icon": "bank"
+                },
+                {
+                  "id": "business-banking",
+                  "title": "Business Banking",
+                  "description": "Tailored financial services to grow your business.",
+                  "icon": "coins"
+                },
+                {
+                  "id": "loans-credit",
+                  "title": "Loans & Credit",
+                  "description": "Flexible loan options for personal and business growth.",
+                  "icon": "hand-coin"
+                },
+                {
+                  "id": "cards-payments",
+                  "title": "Cards & Payments",
+                  "description": "Secure and convenient payment solutions for a seamless experience.",
+                  "icon": "card"
+                },
+                {
+                  "id": "wealth-management",
+                  "title": "Wealth Management",
+                  "description": "Expert guidance to grow and protect your wealth.",
+                  "icon": "growth-bars"
+                },
+                {
+                  "id": "insurance-solutions",
+                  "title": "Insurance Solutions",
+                  "description": "Comprehensive coverage for your life, health, and assets.",
+                  "icon": "shield"
+                },
+                {
+                  "id": "investment-services",
+                  "title": "Investment Services",
+                  "description": "Smart investment options to build a secure future.",
+                  "icon": "sprout-bars"
+                },
+                {
+                  "id": "digital-banking",
+                  "title": "Digital Banking",
+                  "description": "Bank anytime, anywhere with our secure digital platform.",
+                  "icon": "laptop-bank"
+                }
+              ]
+            }
+          }
+        },
+        "WhyChooseUs": {
+          "variants": {
+            "VaultWhyChoose1": {
+              "sectionId": "why-choose-us",
+              "badge": "Why Choose Us",
+              "titleLine1": "A Trusted Partner for",
+              "titleLine2Prefix": "Your",
+              "titleHighlight": "Financial Journey",
+              "subtitle": "We combine industry expertise, personalized support, and innovative solutions to help you achieve your financial goals with confidence.",
+              "features": [
+                {
+                  "id": "trust-security",
+                  "title": "Trust & Security",
+                  "description": "Your money and data are always protected.",
+                  "icon": "shield"
+                },
+                {
+                  "id": "expert-team",
+                  "title": "Expert Team",
+                  "description": "Experienced professionals with financial expertise.",
+                  "icon": "team"
+                },
+                {
+                  "id": "tailored-solutions",
+                  "title": "Tailored Solutions",
+                  "description": "Financial services designed for your unique needs.",
+                  "icon": "layers"
+                },
+                {
+                  "id": "long-term-value",
+                  "title": "Long-Term Value",
+                  "description": "Building a stronger and more secure financial future.",
+                  "icon": "growth"
+                }
+              ]
+            }
+          }
+        },
+        "Team": {
+          "variants": {
+            "VaultTeam1": {
+              "sectionId": "team",
+              "badge": "OUR TEAM",
+              "titlePrefix": "Meet Our",
+              "titleHighlight": "Expert Team",
+              "subtitle": "A team of experienced professionals dedicated to delivering trusted financial solutions.",
+              "members": [
+                {
+                  "id": "priya-sharma",
+                  "name": "Priya Sharma",
+                  "role": "Financial Analyst",
+                  "image": "/team-priya.webp"
+                },
+                {
+                  "id": "daniel-morgan",
+                  "name": "Daniel Morgan",
+                  "role": "Investment Manager",
+                  "image": "/team-daniel.webp"
+                },
+                {
+                  "id": "arjun-mehta",
+                  "name": "Arjun Mehta",
+                  "role": "Client Relations Head",
+                  "image": "/team-arjun.webp"
+                }
+              ]
+            }
+          }
+        },
+        "Testimonials": {
+          "variants": {
+            "VaultTestimonials1": {
+              "sectionId": "testimonials",
+              "badge": "TESTIMONIALS",
+              "titlePrefix": "What Our Clients",
+              "titleHighlight": "Say",
+              "subtitle": "Trusted by businesses and individuals for reliable financial solutions.",
+              "starCount": 5,
+              "prevAriaLabel": "Previous testimonials",
+              "nextAriaLabel": "Next testimonials",
+              "items": [
+                {
+                  "id": "client-priya",
+                  "quote": "The team provided clear, practical financial advice that helped us streamline our investments and achieve our goals faster.",
+                  "name": "Priya Sharma",
+                  "role": "Business Owner",
+                  "avatar": "/team-priya.webp"
+                },
+                {
+                  "id": "client-daniel",
+                  "quote": "Professional, transparent, and truly client-focused. Their personalized approach made a big difference for our business.",
+                  "name": "Daniel Morgan",
+                  "role": "Investment Consultant",
+                  "avatar": "/team-daniel.webp"
+                },
+                {
+                  "id": "client-arjun",
+                  "quote": "Excellent support and deep industry knowledge. I highly recommend their services to anyone seeking financial growth.",
+                  "name": "Arjun Mehta",
+                  "role": "Entrepreneur",
+                  "avatar": "/team-arjun.webp"
+                },
+                {
+                  "id": "client-kavita",
+                  "quote": "Reliable banking solutions and prompt guidance whenever we needed structured planning for expansion.",
+                  "name": "Kavita Nair",
+                  "role": "Founder, FinEdge",
+                  "avatar": "/team-priya.webp"
+                }
+              ]
+            }
+          }
+        },
+        "Contact": {
+          "variants": {
+            "VaultContact1": {
+              "sectionId": "contact",
+              "badge": "CONTACT US",
+              "titlePrefix": "Get in Touch",
+              "titleHighlight": "with Us",
+              "subtitle": "Have a question or need financial advice? Feel free to reach out to our team.",
+              "details": [
+                {
+                  "id": "office",
+                  "icon": "map-pin",
+                  "label": "Our Office",
+                  "value": "742 Evergreen Terrace, Springfield, OR 97477, USA"
+                },
+                {
+                  "id": "phone",
+                  "icon": "phone",
+                  "label": "Phone",
+                  "value": "+1 000 000 000"
+                },
+                {
+                  "id": "email",
+                  "icon": "mail",
+                  "label": "Email",
+                  "value": "contact@xyz.com"
+                }
+              ],
+              "form": {
+                "namePlaceholder": "Your Name",
+                "emailPlaceholder": "Your Email",
+                "phonePlaceholder": "Phone Number",
+                "subjectPlaceholder": "Subject",
+                "messagePlaceholder": "Your Message"
+              }
+            }
+          }
+        },
+        "Faq": {
+          "variants": {
+            "VaultFaq1": {
+              "sectionId": "faqs",
+              "badge": "FAQ",
+              "titlePrefix": "Frequently Asked",
+              "titleHighlight": "Questions",
+              "subtitle": "Find quick answers to some of the most common questions about our services.",
+              "defaultOpenKey": null,
+              "leftItems": [
+                {
+                  "question": "What services do you offer?",
+                  "answer": "We provide a wide range of financial services including investment planning, wealth management, tax advisory, retirement planning, and risk management."
+                },
+                {
+                  "question": "How do I get started?",
+                  "answer": "You can reach out through our contact form or phone line to schedule an initial consultation with one of our financial advisors."
+                },
+                {
+                  "question": "Are your services suitable for individuals and businesses?",
+                  "answer": "Yes, we offer tailored banking, credit, and advisory solutions designed for both individual clients and growing businesses."
+                },
+                {
+                  "question": "Do you assist with loans and credit planning?",
+                  "answer": "Yes, we help evaluate credit eligibility, compare loan structures, and plan repayments smoothly for personal and business needs."
+                }
+              ],
+              "rightItems": [
+                {
+                  "question": "Is my financial information kept secure?",
+                  "answer": "Yes, we follow strict security protocols, encryption standards, and privacy controls to protect your financial data at all times."
+                },
+                {
+                  "question": "Do you offer personalized financial plans?",
+                  "answer": "Every financial plan is customized around your income goals, risk appetite, timeline, and long-term milestones."
+                },
+                {
+                  "question": "How often should I review my financial plan?",
+                  "answer": "We recommend reviewing your financial plan every six months or whenever there is a major change in your career, income, or business."
+                },
+                {
+                  "question": "Can you help with long-term wealth creation?",
+                  "answer": "Yes, our advisors help structure diversified portfolios and disciplined savings strategies aimed at sustainable long-term wealth creation."
+                }
+              ]
+            }
+          }
+        },
+        "Footer": {
+          "variants": {
+            "VaultFooter1": {
+              "logo": "/logo.png",
+              "quickLinksHeading": "Quick Links",
+              "supportHeading": "Support",
+              "contactHeading": "Contact Info",
+              "quickLinks": [
+                { "label": "Home", "href": "#home" },
+                { "label": "About Us", "href": "#about" },
+                { "label": "Services", "href": "#services" },
+                { "label": "Testimonials", "href": "#testimonials" }
+              ],
+              "supportLinks": [
+                { "label": "FAQ", "href": "#faqs" },
+                { "label": "Contact Us", "href": "#contact" }
+              ],
+              "copyright": "© 2026 Vaultora Finance & Banking. All Rights Reserved. Powered By Lestow."
+            }
+          }
+        }
+      }
+    }
+  }
+}
