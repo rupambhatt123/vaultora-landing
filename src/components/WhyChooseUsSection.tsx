@@ -29,6 +29,9 @@ const grow: Variants = {
 };
 const barStyle = { transformBox: "fill-box", transformOrigin: "bottom" } as const;
 
+const mobileArrowBtnClass =
+  "flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-[#0B2350] shadow-md transition-all duration-200 hover:border-[#F0CF7C] hover:bg-gradient-to-br hover:from-[#F0CF7C] hover:to-[#D4A63A] hover:text-[#0B2350] active:scale-95 disabled:pointer-events-none disabled:opacity-35 disabled:shadow-none";
+
 function IconSvg({
   children,
   reveal,
@@ -646,8 +649,7 @@ export default function WhyChooseUsSection() {
               onClick={() => slideBy(-1)}
               disabled={activeIndex === 0}
               aria-label="Previous reason"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white shadow-md transition active:scale-95 disabled:opacity-35 disabled:shadow-none"
-              style={{ color: NAVY }}
+              className={mobileArrowBtnClass}
             >
               <svg
                 viewBox="0 0 20 20"
@@ -684,11 +686,7 @@ export default function WhyChooseUsSection() {
               onClick={() => slideBy(1)}
               disabled={activeIndex === lastIndex}
               aria-label="Next reason"
-              className="flex h-11 w-11 items-center justify-center rounded-full shadow-md transition active:scale-95 disabled:opacity-35 disabled:shadow-none"
-              style={{
-                color: NAVY,
-                background: `linear-gradient(135deg, ${GOLD_LIGHT}, ${GOLD})`,
-              }}
+              className={mobileArrowBtnClass}
             >
               <svg
                 viewBox="0 0 20 20"
@@ -709,3 +707,4 @@ export default function WhyChooseUsSection() {
     </section>
   );
 }
+

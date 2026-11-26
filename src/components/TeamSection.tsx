@@ -14,6 +14,9 @@ const GOLD_DEEP = "#B98A1E";
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const font = "'Montserrat', 'Poppins', system-ui, sans-serif";
 
+const mobileArrowBtnClass =
+  "flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-[#0B2350] shadow-md transition-all duration-200 hover:border-[#EDC45E] hover:bg-gradient-to-br hover:from-[#EDC45E] hover:to-[#B98A1E] hover:text-white active:scale-95";
+
 interface TeamMember {
   id: string;
   name: string;
@@ -219,8 +222,7 @@ export default function TeamSection() {
               type="button"
               onClick={() => slideBy(-1)}
               aria-label="Previous team member"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white shadow-md transition active:scale-95"
-              style={{ color: NAVY }}
+              className={mobileArrowBtnClass}
             >
               <svg
                 viewBox="0 0 20 20"
@@ -256,10 +258,7 @@ export default function TeamSection() {
               type="button"
               onClick={() => slideBy(1)}
               aria-label="Next team member"
-              className="flex h-11 w-11 items-center justify-center rounded-full text-white shadow-md transition active:scale-95"
-              style={{
-                background: `linear-gradient(135deg, ${GOLD_LIGHT}, ${GOLD_DEEP})`,
-              }}
+              className={mobileArrowBtnClass}
             >
               <svg
                 viewBox="0 0 20 20"
@@ -280,3 +279,4 @@ export default function TeamSection() {
     </section>
   );
 }
+

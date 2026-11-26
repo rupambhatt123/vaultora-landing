@@ -88,10 +88,8 @@ function Arrow({ dir }: { dir: "left" | "right" }) {
   );
 }
 
-const prevBtn =
-  "flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white shadow-[0_6px_18px_rgba(11,35,80,0.12)] transition hover:scale-105 hover:bg-slate-50 active:scale-95 lg:h-12 lg:w-12";
-const nextBtn =
-  "flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white shadow-[0_8px_20px_rgba(185,138,30,0.38)] transition hover:scale-105 active:scale-95 lg:h-12 lg:w-12";
+const navBtnClass =
+  "flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-[#0B2350] shadow-[0_6px_18px_rgba(11,35,80,0.12)] transition-all duration-200 hover:scale-105 hover:border-[#EDC45E] hover:bg-gradient-to-br hover:from-[#EDC45E] hover:to-[#B98A1E] hover:text-white hover:shadow-[0_8px_20px_rgba(185,138,30,0.38)] active:scale-95 lg:h-12 lg:w-12";
 
 export default function TestimonialsSection() {
   const reduce = useReducedMotion();
@@ -201,8 +199,7 @@ export default function TestimonialsSection() {
               type="button"
               onClick={handlePrev}
               aria-label={testimonialsJson.prevAriaLabel}
-              className={prevBtn}
-              style={{ color: NAVY }}
+              className={navBtnClass}
             >
               <Arrow dir="left" />
             </button>
@@ -289,10 +286,7 @@ export default function TestimonialsSection() {
               type="button"
               onClick={handleNext}
               aria-label={testimonialsJson.nextAriaLabel}
-              className={nextBtn}
-              style={{
-                background: `linear-gradient(135deg, ${GOLD_LIGHT}, ${GOLD_DEEP})`,
-              }}
+              className={navBtnClass}
             >
               <Arrow dir="right" />
             </button>
@@ -304,8 +298,7 @@ export default function TestimonialsSection() {
             type="button"
             onClick={handlePrev}
             aria-label={testimonialsJson.prevAriaLabel}
-            className={`${prevBtn} lg:hidden`}
-            style={{ color: NAVY }}
+            className={`${navBtnClass} lg:hidden`}
           >
             <Arrow dir="left" />
           </button>
@@ -330,10 +323,7 @@ export default function TestimonialsSection() {
             type="button"
             onClick={handleNext}
             aria-label={testimonialsJson.nextAriaLabel}
-            className={`${nextBtn} lg:hidden`}
-            style={{
-              background: `linear-gradient(135deg, ${GOLD_LIGHT}, ${GOLD_DEEP})`,
-            }}
+            className={`${navBtnClass} lg:hidden`}
           >
             <Arrow dir="right" />
           </button>
@@ -342,3 +332,4 @@ export default function TestimonialsSection() {
     </section>
   );
 }
+

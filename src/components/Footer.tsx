@@ -22,6 +22,15 @@ interface SocialLinkItem {
   href: string;
 }
 
+function formatTelHref(phone: string) {
+  const cleaned = phone.replace(/[^\d+]/g, "");
+  return `tel:${cleaned || phone}`;
+}
+
+function formatMailtoHref(email: string) {
+  return `mailto:${email.trim()}`;
+}
+
 function FacebookSvg() {
   return (
     <svg
@@ -151,7 +160,7 @@ export default function Footer() {
       />
 
       <div className="mx-auto max-w-[1500px] px-4 pb-12 sm:px-6 lg:px-[4.5%]">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-12">
           <motion.div
             initial={reduce ? false : { opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -173,77 +182,79 @@ export default function Footer() {
             </a>
           </motion.div>
 
-          <motion.div
-            initial={reduce ? false : { opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: 0.08, ease: EASE }}
-            className="lg:col-span-2 lg:border-r lg:border-slate-200/80 lg:pr-6"
-          >
-            <h3
-              className="text-base font-extrabold sm:text-lg lg:text-[clamp(16px,1.2vw,22px)]"
-              style={{ color: NAVY }}
+          <div className="grid grid-cols-2 gap-6 md:contents">
+            <motion.div
+              initial={reduce ? false : { opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.08, ease: EASE }}
+              className="lg:col-span-2 lg:border-r lg:border-slate-200/80 lg:pr-6"
             >
-              {footerJson.quickLinksHeading}
-            </h3>
-            <span
-              aria-hidden
-              className="mt-2 block h-[3px] w-10 rounded-full"
-              style={{ backgroundColor: GOLD }}
-            />
-            <ul className="mt-4 space-y-3">
-              {footerJson.quickLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="group inline-flex items-center gap-1.5 text-sm font-medium text-slate-700 transition hover:text-[#B98A1E] sm:text-[15px] lg:text-[clamp(13.5px,1vw,18px)]"
-                  >
-                    <ChevronRight
-                      className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1"
-                      style={{ color: GOLD }}
-                    />
-                    <span>{link.label}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+              <h3
+                className="text-base font-extrabold sm:text-lg lg:text-[clamp(16px,1.2vw,22px)]"
+                style={{ color: NAVY }}
+              >
+                {footerJson.quickLinksHeading}
+              </h3>
+              <span
+                aria-hidden
+                className="mt-2 block h-[3px] w-10 rounded-full"
+                style={{ backgroundColor: GOLD }}
+              />
+              <ul className="mt-4 space-y-3">
+                {footerJson.quickLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="group inline-flex items-center gap-1.5 text-sm font-medium text-slate-700 transition hover:text-[#B98A1E] sm:text-[15px] lg:text-[clamp(13.5px,1vw,18px)]"
+                    >
+                      <ChevronRight
+                        className="h-3.5 w-3.5 shrink-0 transition-transform duration-200 group-hover:translate-x-1"
+                        style={{ color: GOLD }}
+                      />
+                      <span>{link.label}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
 
-          <motion.div
-            initial={reduce ? false : { opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: 0.16, ease: EASE }}
-            className="lg:col-span-2 lg:border-r lg:border-slate-200/80 lg:pr-6"
-          >
-            <h3
-              className="text-base font-extrabold sm:text-lg lg:text-[clamp(16px,1.2vw,22px)]"
-              style={{ color: NAVY }}
+            <motion.div
+              initial={reduce ? false : { opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.16, ease: EASE }}
+              className="lg:col-span-2 lg:border-r lg:border-slate-200/80 lg:pr-6"
             >
-              {footerJson.supportHeading}
-            </h3>
-            <span
-              aria-hidden
-              className="mt-2 block h-[3px] w-10 rounded-full"
-              style={{ backgroundColor: GOLD }}
-            />
-            <ul className="mt-4 space-y-3">
-              {footerJson.supportLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="group inline-flex items-center gap-1.5 text-sm font-medium text-slate-700 transition hover:text-[#B98A1E] sm:text-[15px] lg:text-[clamp(13.5px,1vw,18px)]"
-                  >
-                    <ChevronRight
-                      className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1"
-                      style={{ color: GOLD }}
-                    />
-                    <span>{link.label}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+              <h3
+                className="text-base font-extrabold sm:text-lg lg:text-[clamp(16px,1.2vw,22px)]"
+                style={{ color: NAVY }}
+              >
+                {footerJson.supportHeading}
+              </h3>
+              <span
+                aria-hidden
+                className="mt-2 block h-[3px] w-10 rounded-full"
+                style={{ backgroundColor: GOLD }}
+              />
+              <ul className="mt-4 space-y-3">
+                {footerJson.supportLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="group inline-flex items-center gap-1.5 text-sm font-medium text-slate-700 transition hover:text-[#B98A1E] sm:text-[15px] lg:text-[clamp(13.5px,1vw,18px)]"
+                    >
+                      <ChevronRight
+                        className="h-3.5 w-3.5 shrink-0 transition-transform duration-200 group-hover:translate-x-1"
+                        style={{ color: GOLD }}
+                      />
+                      <span>{link.label}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
 
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 18 }}
@@ -274,13 +285,25 @@ export default function Footer() {
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#FBF3DD] shadow-[0_4px_12px_rgba(185,138,30,0.14)]">
                   <Phone className="h-4 w-4" style={{ color: GOLD_DEEP }} />
                 </span>
-                <span>{commonJson.phone}</span>
+                <a
+                  href={formatTelHref(commonJson.phone)}
+                  aria-label={`Call ${commonJson.phone}`}
+                  className="transition hover:text-[#B98A1E] hover:underline"
+                >
+                  {commonJson.phone}
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#FBF3DD] shadow-[0_4px_12px_rgba(185,138,30,0.14)]">
                   <Mail className="h-4 w-4" style={{ color: GOLD_DEEP }} />
                 </span>
-                <span>{commonJson.email}</span>
+                <a
+                  href={formatMailtoHref(commonJson.email)}
+                  aria-label={`Email ${commonJson.email}`}
+                  className="break-all transition hover:text-[#B98A1E] hover:underline"
+                >
+                  {commonJson.email}
+                </a>
               </li>
             </ul>
           </motion.div>
@@ -327,3 +350,4 @@ export default function Footer() {
     </motion.footer>
   );
 }
+

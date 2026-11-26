@@ -295,7 +295,7 @@ export default function HeroSection({
         aria-hidden
         viewBox="0 0 640 200"
         preserveAspectRatio="none"
-        className="pointer-events-none absolute bottom-0 left-0 h-16 w-[75%] sm:h-24 lg:h-[24%] lg:w-[36%]"
+        className="pointer-events-none absolute bottom-0 left-0 h-12 w-[75%] sm:h-20 lg:h-[20%] lg:w-[36%]"
         initial={{ clipPath: "inset(0 100% 0 0)" }}
         animate={{ clipPath: "inset(0 0% 0 0)" }}
         transition={{ duration: 1.8, delay: 0.5, ease: "easeInOut" }}
@@ -337,7 +337,7 @@ export default function HeroSection({
         />
       </motion.svg>
 
-      <div className="relative z-10 flex min-h-[540px] flex-col justify-center px-5 py-20 sm:min-h-[620px] sm:px-10 sm:py-28 lg:min-h-[740px] lg:py-36 lg:pl-[4.6%] lg:pr-6 xl:min-h-[800px]">
+      <div className="relative z-10 flex min-h-[calc(100svh-4rem)] flex-col justify-center px-5 py-10 sm:px-10 sm:py-12 lg:min-h-[calc(100svh-5rem)] lg:max-h-[760px] lg:py-16 lg:pl-[4.6%] lg:pr-6">
         <div className="max-w-lg lg:max-w-[48%]">
           <motion.div
             initial={reduce ? false : { opacity: 0, x: -24 }}
@@ -345,12 +345,12 @@ export default function HeroSection({
             transition={{ duration: 0.7, delay: 0.15, ease: EASE }}
             className="flex items-center gap-2.5 sm:gap-4"
           >
-            <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-white/90 sm:text-xs sm:tracking-[0.35em] lg:text-[clamp(12px,1.05vw,20px)]">
+            <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-white/90 sm:text-xs sm:tracking-[0.35em] lg:text-[clamp(11px,0.95vw,18px)]">
               {eyebrow}
             </span>
             <motion.span
               aria-hidden
-              className="h-[2px] w-8 origin-left sm:w-16 lg:w-24"
+              className="h-[2px] w-8 origin-left sm:w-16 lg:w-20"
               style={{ backgroundColor: GOLD }}
               initial={reduce ? false : { scaleX: 0 }}
               animate={{ scaleX: 1 }}
@@ -358,7 +358,7 @@ export default function HeroSection({
             />
           </motion.div>
 
-          <h1 className="mt-4 break-words text-[28px] font-semibold leading-[1.16] tracking-tight sm:mt-5 sm:text-5xl lg:mt-7 lg:text-[clamp(3rem,4.1vw,5.25rem)] lg:leading-[1.1]">
+          <h1 className="mt-3 break-words text-[28px] font-semibold leading-[1.14] tracking-tight sm:mt-4 sm:text-5xl lg:mt-5 lg:text-[clamp(2.75rem,3.6vw,4.5rem)] lg:leading-[1.08]">
             <span className="block">
               {line1.map((w, i) => (
                 <React.Fragment key={`l1-${i}`}>
@@ -397,7 +397,7 @@ export default function HeroSection({
             initial={reduce ? false : { opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1, ease: EASE }}
-            className="mt-5 max-w-sm text-sm leading-relaxed text-white/90 sm:mt-6 sm:max-w-md sm:text-lg lg:mt-8 lg:max-w-[34em] lg:text-[clamp(16px,1.35vw,26px)]"
+            className="mt-4 max-w-sm text-sm leading-relaxed text-white/90 sm:mt-5 sm:max-w-md sm:text-base lg:mt-6 lg:max-w-[34em] lg:text-[clamp(15px,1.2vw,22px)]"
           >
             {subheadline}
           </motion.p>
@@ -406,13 +406,13 @@ export default function HeroSection({
             initial={reduce ? false : { opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.3, ease: EASE }}
-            className="mt-7 flex flex-wrap gap-3 sm:mt-8 sm:gap-4 lg:mt-10"
+            className="mt-5 flex flex-wrap gap-3 sm:mt-6 sm:gap-4 lg:mt-7"
           >
             <motion.a
               href={primaryCta.href}
               whileHover={{ y: -3, scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="group relative inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-bold text-[#0B1A3A] outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A2250] sm:px-8 sm:py-4 sm:text-base"
+              className="group relative inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-bold text-[#0B1A3A] outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A2250] sm:px-7 sm:py-3.5 sm:text-sm lg:text-base"
               style={{
                 background: `linear-gradient(135deg, ${GOLD_LIGHT} 0%, ${GOLD} 50%, ${GOLD_DEEP} 100%)`,
                 boxShadow: "0 12px 32px rgba(227,182,91,0.35)",
@@ -474,7 +474,7 @@ export default function HeroSection({
                 borderColor: GOLD,
               }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center rounded-full border-2 border-white/90 bg-[#0A2250]/30 px-5 py-2.5 text-xs font-bold text-white outline-none backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A2250] sm:px-8 sm:py-4 sm:text-base"
+              className="inline-flex items-center rounded-full border-2 border-white/90 bg-[#0A2250]/30 px-5 py-2.5 text-xs font-bold text-white outline-none backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A2250] sm:px-7 sm:py-3.5 sm:text-sm lg:text-base"
             >
               {secondaryCta.label}
             </motion.a>

@@ -13,6 +13,22 @@ const ALL_TARGETS = [
   headerJson.ctaButton.href,
 ];
 
+function scrollToSection(href: string) {
+  if (!href.startsWith("#")) return false;
+  const target = document.querySelector<HTMLElement>(href);
+  if (!target) return false;
+
+  const headerOffset = window.innerWidth < 640 ? 88 : 104;
+  const targetTop =
+    target.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+  window.scrollTo({
+    top: Math.max(0, targetTop),
+    behavior: "smooth",
+  });
+  return true;
+}
+
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeHref, setActiveHref] = useState(headerJson.homeHref);
@@ -49,6 +65,34 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+    closeMobile = false
+  ) => {
+    setActiveHref(href);
+
+    if (closeMobile) {
+      setMobileOpen(false);
+      if (href.startsWith("#")) {
+        e.preventDefault();
+        window.setTimeout(() => {
+          if (!scrollToSection(href)) {
+            window.location.hash = href;
+          }
+        }, 120);
+      }
+      return;
+    }
+
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      if (!scrollToSection(href)) {
+        window.location.hash = href;
+      }
+    }
+  };
+
   const isContactActive = activeHref === headerJson.ctaButton.href;
 
   return (
@@ -63,6 +107,7 @@ export default function Navbar() {
           <a
             href={headerJson.homeHref}
             aria-label={headerJson.homeAriaLabel}
+            onClick={(e) => handleLinkClick(e, headerJson.homeHref)}
             className="flex shrink-0 items-center gap-2.5"
           >
             <img
@@ -81,7 +126,7 @@ export default function Navbar() {
                 <a
                   key={item.id}
                   href={item.href}
-                  onClick={() => setActiveHref(item.href)}
+                  onClick={(e) => handleLinkClick(e, item.href)}
                   className={`relative py-1 text-[15px] font-bold transition-colors ${
                     isActive
                       ? "text-[#b58b2a]"
@@ -101,7 +146,7 @@ export default function Navbar() {
         <div className="hidden items-center md:flex">
           <a
             href={headerJson.ctaButton.href}
-            onClick={() => setActiveHref(headerJson.ctaButton.href)}
+            onClick={(e) => handleLinkClick(e, headerJson.ctaButton.href)}
             className={`inline-flex items-center gap-2.5 rounded-full px-5 py-2.5 text-sm font-semibold transition ${
               isContactActive
                 ? "bg-[#b58b2a] text-[#072242] ring-2 ring-[#e4b649]"
@@ -152,10 +197,7 @@ export default function Navbar() {
                   <a
                     key={item.id}
                     href={item.href}
-                    onClick={() => {
-                      setActiveHref(item.href);
-                      setMobileOpen(false);
-                    }}
+                    onClick={(e) => handleLinkClick(e, item.href, true)}
                     className={`block rounded-md px-3 py-2.5 text-[15px] font-bold ${
                       isActive
                         ? "bg-amber-50 text-[#b58b2a]"
@@ -169,10 +211,9 @@ export default function Navbar() {
               <div className="pt-2">
                 <a
                   href={headerJson.ctaButton.href}
-                  onClick={() => {
-                    setActiveHref(headerJson.ctaButton.href);
-                    setMobileOpen(false);
-                  }}
+                  onClick={(e) =>
+                    handleLinkClick(e, headerJson.ctaButton.href, true)
+                  }
                   className={`inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold ${
                     isContactActive
                       ? "bg-[#b58b2a] text-[#072242] ring-2 ring-[#e4b649]"
@@ -191,3 +232,4 @@ export default function Navbar() {
     </motion.header>
   );
 }
+

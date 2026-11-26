@@ -45,15 +45,15 @@
           "pages": {
             "home": {
               "components": [
-                { "key": "Banner", "component": "VaultBanner1" },
-                { "key": "About", "component": "VaultAbout1" },
-                { "key": "Services", "component": "VaultServices1" },
-                { "key": "WhyChooseUs", "component": "VaultWhyChoose1" },
-                { "key": "Team", "component": "VaultTeam1" },
-                { "key": "Testimonials", "component": "VaultTestimonials1" },
-                { "key": "Contact", "component": "VaultContact1" },
-                { "key": "Faq", "component": "VaultFaq1" }
-              ]
+  { "key": "Banner", "component": "VaultBanner1" },
+  { "key": "About", "component": "VaultAbout1" },
+  { "key": "Services", "component": "VaultServices1" },
+  { "key": "WhyChooseUs", "component": "VaultWhyChoose1" },
+  { "key": "Team", "component": "VaultTeam1" },
+  { "key": "Testimonials", "component": "VaultTestimonials1" },
+  { "key": "Faq", "component": "VaultFaq1" },
+  { "key": "Contact", "component": "VaultContact1" }
+]
             }
           }
         }

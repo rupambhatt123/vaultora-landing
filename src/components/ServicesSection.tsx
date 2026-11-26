@@ -203,6 +203,9 @@ const SERVICES: ServiceItem[] = servicesJson.items.map((item) => ({
   icon: renderServiceIcon(item.icon),
 }));
 
+const mobileArrowBtnClass =
+  "flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-[#0B2350] shadow-md transition-all duration-200 hover:border-[#E8C468] hover:bg-gradient-to-br hover:from-[#E8C468] hover:to-[#C99A2E] hover:text-[#0B2350] active:scale-95 disabled:pointer-events-none disabled:opacity-35 disabled:shadow-none";
+
 function ServiceCard({
   service,
   index,
@@ -317,7 +320,7 @@ export default function ServicesSection() {
       />
 
       <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-[3%]">
-        <div className="mx-auto max-w-4xl text-center">
+        <div className="mx-auto max-w-4xl px-1 text-center">
           <motion.div
             className="flex items-center justify-center gap-3 sm:gap-4"
             initial={reduce ? false : { opacity: 0, y: 14 }}
@@ -352,7 +355,7 @@ export default function ServicesSection() {
           </motion.div>
 
           <motion.h2
-            className="mt-3 whitespace-nowrap text-[21px] font-extrabold leading-tight tracking-tight sm:text-3xl md:text-4xl lg:text-[44px]"
+            className="mt-3 text-[22px] font-extrabold leading-snug tracking-tight sm:text-3xl md:text-4xl lg:text-[44px] lg:leading-tight"
             style={{ color: NAVY }}
             initial={reduce ? false : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -439,7 +442,7 @@ export default function ServicesSection() {
               onClick={() => go(-1)}
               disabled={i === 0}
               aria-label="Previous service"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-[#0B2350] shadow-md transition active:scale-95 disabled:opacity-35 disabled:shadow-none"
+              className={mobileArrowBtnClass}
             >
               <svg
                 viewBox="0 0 20 20"
@@ -476,10 +479,7 @@ export default function ServicesSection() {
               onClick={() => go(1)}
               disabled={i === last}
               aria-label="Next service"
-              className="flex h-11 w-11 items-center justify-center rounded-full text-[#0B2350] shadow-md transition active:scale-95 disabled:opacity-35 disabled:shadow-none"
-              style={{
-                background: `linear-gradient(135deg, ${GOLD_LIGHT}, ${GOLD})`,
-              }}
+              className={mobileArrowBtnClass}
             >
               <svg
                 viewBox="0 0 20 20"
@@ -500,3 +500,4 @@ export default function ServicesSection() {
     </section>
   );
 }
+

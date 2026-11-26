@@ -16,8 +16,8 @@ export default function HomePage() {
       <WhyChooseUsSection />
       <TeamSection />
       <TestimonialsSection />
-      <ContactSection />
       <FaqSection />
+      <ContactSection />
     </main>
   );
 }
